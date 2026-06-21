@@ -1,0 +1,146 @@
+.bouton-retour {
+    @include bouton;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 1.5rem;
+    background: $blanc;
+    color: $bleu-om;
+    border: 0.125rem solid $bordure;
+    font-size: 0.9rem;
+
+    &:hover {
+        border-color: $bleu-om;
+        background: rgba(0, 90, 130, 0.05);
+    }
+
+    &:focus-visible {
+        outline: 0.1875rem solid $or-om;
+        outline-offset: 0.125rem;
+    }
+}
+
+.detail-contenu {
+    background: $blanc;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    margin: 0 1rem 2rem;
+    max-width: 52rem;
+    border-top: 0.4rem solid $or-om;
+
+    @include tablette {
+        margin: 0 auto 2rem;
+    }
+
+    img {
+        width: 100%;
+        max-height: 26rem;
+        object-fit: cover;
+    }
+
+    .detail-infos {
+        padding: 2rem;
+
+        .categorie {
+            display: inline-block;
+            background: $bleu-om;
+            color: $blanc;
+            padding: 0.3rem 1rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: $bleu-om;
+            font-weight: 700;
+        }
+
+        .pratique {
+            background: $gris-clair;
+            padding: 1rem 1.2rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.2rem;
+            border-left: 0.3rem solid $or-om;
+
+            p {
+                margin-bottom: 0.4rem;
+                font-size: 0.95rem;
+            }
+
+            strong {
+                color: $bleu-om;
+            }
+        }
+
+        .description {
+            margin-bottom: 1.5rem;
+
+            h3 {
+                color: $bleu-om;
+                margin-bottom: 0.5rem;
+                font-size: 1.1rem;
+                font-weight: 700;
+            }
+
+            p {
+                line-height: 1.8;
+                color: #374151;
+            }
+        }
+
+        .video-bloc {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+
+            h3 {
+                color: $bleu-om;
+                margin-bottom: 0.8rem;
+                font-size: 1.1rem;
+                font-weight: 700;
+            }
+
+            video {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                border-radius: 0.5rem;
+                background: $bleu-om;
+                display: block;
+                border: 2px solid $bordure;
+            }
+        }
+
+        .bouton-reservation {
+            @include bouton;
+            display: block;
+            width: 100%;
+            background: $bleu-om;
+            color: $blanc;
+            font-size: 1.05rem;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            border: 0.15rem solid $or-om;
+            letter-spacing: 0.02em;
+
+            &:hover {
+                background: $or-om;
+                color: $texte;
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+
+            &:focus-visible {
+                outline: 0.1875rem solid $or-om;
+                outline-offset: 0.25rem;
+            }
+        }
+    }
+}

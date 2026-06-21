@@ -1,0 +1,42 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+
+    button {
+        @include bouton;
+        background: $blanc;
+        color: $bleu-om;
+        border: 0.125rem solid $bordure;
+        min-width: 2.5rem;
+        padding: 0.5rem 0.9rem;
+
+        &:hover {
+            border-color: $bleu-om;
+            background: rgba(0, 90, 130, 0.06);
+        }
+
+        &.actif {
+            background: $bleu-om;
+            color: $blanc;
+            border-color: $bleu-om;
+            font-weight: 700;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        &:focus-visible {
+            outline: 0.1875rem solid $or-om;
+            outline-offset: 0.125rem;
+        }
+
+        &:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+    }
+}

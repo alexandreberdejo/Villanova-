@@ -1,0 +1,527 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #F4F5F8;
+  color: #1E293B;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cache {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  overflow: hidden;
+}
+
+.lien-evitement {
+  position: absolute;
+  top: -6.25rem;
+  left: 1rem;
+  background: #C8A951;
+  color: #1E293B;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  z-index: 999;
+  font-weight: 700;
+}
+.lien-evitement:focus {
+  top: 1rem;
+}
+
+header {
+  background: #005A82;
+  color: #FFFFFF;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  border-bottom: 0.25rem solid #C8A951;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+@media (min-width: 48rem) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.8rem 2.5rem;
+  }
+}
+header .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+header .logo a {
+  color: #FFFFFF;
+}
+header .logo span {
+  color: #C8A951;
+}
+header nav {
+  display: flex;
+  gap: 0.5rem;
+}
+header nav a {
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 0.125rem solid transparent;
+}
+header nav a:hover, header nav a[aria-current=page] {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #FFFFFF;
+}
+header nav a:focus-visible {
+  outline: 0.125rem solid #C8A951;
+  outline-offset: 0.125rem;
+}
+
+.banniere {
+  position: relative;
+  min-height: 22rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #FFFFFF;
+  text-align: center;
+}
+.banniere::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.grandformatnumerique.com/wp-content/uploads/Marseille-preview.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+.banniere::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 90, 130, 0.82) 0%, rgba(0, 90, 130, 0.94) 100%);
+  z-index: 1;
+}
+.banniere .banniere-contenu {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 1.5rem;
+}
+.banniere .banniere-contenu::before {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 0.3rem;
+  background: #C8A951;
+  margin: 0 auto 1.2rem;
+  border-radius: 0.2rem;
+}
+.banniere .banniere-contenu h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+@media (min-width: 48rem) {
+  .banniere .banniere-contenu h2 {
+    font-size: 2.8rem;
+  }
+}
+.banniere .banniere-contenu p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+.banniere .banniere-contenu::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 0.3rem;
+  background: #C8A951;
+  margin: 1.2rem auto 0;
+  border-radius: 0.2rem;
+}
+
+.filtres {
+  background: #FFFFFF;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-bottom: 0.0625rem solid #D1D5DB;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+@media (min-width: 48rem) {
+  .filtres {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 2.5rem;
+  }
+}
+.filtres input[type=search] {
+  flex: 1;
+  padding: 0.65rem 1rem;
+  border: 0.125rem solid #D1D5DB;
+  border-radius: 0.4rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+}
+.filtres input[type=search]:focus {
+  outline: none;
+  border-color: #005A82;
+  box-shadow: 0 0 0 3px rgba(0, 90, 130, 0.12);
+}
+.filtres .boutons-filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.filtres .boutons-filtres button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #F4F5F8;
+  color: #005A82;
+  border: 0.125rem solid #D1D5DB;
+  font-size: 0.88rem;
+  padding: 0.5rem 1rem;
+}
+.filtres .boutons-filtres button:hover {
+  border-color: #C8A951;
+  background: rgba(200, 169, 81, 0.1);
+}
+.filtres .boutons-filtres button.actif {
+  background: #005A82;
+  color: #FFFFFF;
+  border-color: #005A82;
+}
+.filtres .boutons-filtres button:active {
+  transform: scale(0.97);
+}
+.filtres .boutons-filtres button:focus-visible {
+  outline: 0.1875rem solid #C8A951;
+  outline-offset: 0.125rem;
+}
+
+.evenements {
+  padding: 2rem 1rem;
+}
+@media (min-width: 48rem) {
+  .evenements {
+    padding: 2.5rem 2.5rem;
+  }
+}
+.evenements h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+.evenements h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.2rem;
+  background: #C8A951;
+  border-radius: 0.1rem;
+}
+
+#liste {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 48rem) {
+  #liste {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 64rem) {
+  #liste {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.carte {
+  background: #FFFFFF;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  border-top: 0.25rem solid #005A82;
+  transition: box-shadow 0.2s, border-top-color 0.2s, transform 0.15s;
+}
+.carte:hover {
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 90, 130, 0.18);
+  border-top-color: #C8A951;
+  transform: translateY(-2px);
+}
+.carte:active {
+  transform: scale(0.98);
+}
+.carte:focus-visible {
+  outline: 0.1875rem solid #C8A951;
+  outline-offset: 0.125rem;
+}
+.carte picture {
+  display: block;
+  width: 100%;
+  height: 11rem;
+  overflow: hidden;
+  background: #005A82;
+}
+.carte img {
+  width: 100%;
+  height: 11rem;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.carte:hover img {
+  transform: scale(1.04);
+}
+.carte .infos {
+  padding: 1rem;
+}
+.carte .infos .categorie {
+  display: inline-block;
+  background: #005A82;
+  color: #FFFFFF;
+  padding: 0.18rem 0.7rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+.carte .infos h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #005A82;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.carte .infos p {
+  font-size: 0.88rem;
+  color: #6B7280;
+  margin-bottom: 0.3rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.pagination button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #FFFFFF;
+  color: #005A82;
+  border: 0.125rem solid #D1D5DB;
+  min-width: 2.5rem;
+  padding: 0.5rem 0.9rem;
+}
+.pagination button:hover {
+  border-color: #005A82;
+  background: rgba(0, 90, 130, 0.06);
+}
+.pagination button.actif {
+  background: #005A82;
+  color: #FFFFFF;
+  border-color: #005A82;
+  font-weight: 700;
+}
+.pagination button:active {
+  transform: scale(0.95);
+}
+.pagination button:focus-visible {
+  outline: 0.1875rem solid #C8A951;
+  outline-offset: 0.125rem;
+}
+.pagination button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.bouton-retour {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1.5rem;
+  background: #FFFFFF;
+  color: #005A82;
+  border: 0.125rem solid #D1D5DB;
+  font-size: 0.9rem;
+}
+.bouton-retour:hover {
+  border-color: #005A82;
+  background: rgba(0, 90, 130, 0.05);
+}
+.bouton-retour:focus-visible {
+  outline: 0.1875rem solid #C8A951;
+  outline-offset: 0.125rem;
+}
+
+.detail-contenu {
+  background: #FFFFFF;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  margin: 0 1rem 2rem;
+  max-width: 52rem;
+  border-top: 0.4rem solid #C8A951;
+}
+@media (min-width: 48rem) {
+  .detail-contenu {
+    margin: 0 auto 2rem;
+  }
+}
+.detail-contenu img {
+  width: 100%;
+  max-height: 26rem;
+  object-fit: cover;
+}
+.detail-contenu .detail-infos {
+  padding: 2rem;
+}
+.detail-contenu .detail-infos .categorie {
+  display: inline-block;
+  background: #005A82;
+  color: #FFFFFF;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.detail-contenu .detail-infos h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #005A82;
+  font-weight: 700;
+}
+.detail-contenu .detail-infos .pratique {
+  background: #F4F5F8;
+  padding: 1rem 1.2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.2rem;
+  border-left: 0.3rem solid #C8A951;
+}
+.detail-contenu .detail-infos .pratique p {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+.detail-contenu .detail-infos .pratique strong {
+  color: #005A82;
+}
+.detail-contenu .detail-infos .description {
+  margin-bottom: 1.5rem;
+}
+.detail-contenu .detail-infos .description h3 {
+  color: #005A82;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.detail-contenu .detail-infos .description p {
+  line-height: 1.8;
+  color: #374151;
+}
+.detail-contenu .detail-infos .video-bloc {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.detail-contenu .detail-infos .video-bloc h3 {
+  color: #005A82;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.detail-contenu .detail-infos .video-bloc video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  background: #005A82;
+  display: block;
+  border: 2px solid #D1D5DB;
+}
+.detail-contenu .detail-infos .bouton-reservation {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0.4rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+  width: 100%;
+  background: #005A82;
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  border: 0.15rem solid #C8A951;
+  letter-spacing: 0.02em;
+}
+.detail-contenu .detail-infos .bouton-reservation:hover {
+  background: #C8A951;
+  color: #1E293B;
+}
+.detail-contenu .detail-infos .bouton-reservation:active {
+  transform: scale(0.98);
+}
+.detail-contenu .detail-infos .bouton-reservation:focus-visible {
+  outline: 0.1875rem solid #C8A951;
+  outline-offset: 0.25rem;
+}
+
+footer {
+  background: #005A82;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-top: 0.25rem solid #C8A951;
+  font-size: 0.9rem;
+}

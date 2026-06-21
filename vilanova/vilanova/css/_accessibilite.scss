@@ -1,0 +1,22 @@
+.cache {
+    position: absolute;
+    width: 0.0625rem;
+    height: 0.0625rem;
+    overflow: hidden;
+}
+
+.lien-evitement {
+    position: absolute;
+    top: -6.25rem;
+    left: 1rem;
+    background: $or-om;
+    color: $texte;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    z-index: 999;
+    font-weight: 700;
+
+    &:focus {
+        top: 1rem;
+    }
+}

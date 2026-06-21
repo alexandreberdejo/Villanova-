@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VillaNova Marseille - Événements culturels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=3">
+</head>
+<body>
+
+    <a href="#contenu" class="lien-evitement">Aller au contenu</a>
+
+    <header>
+        <h1 class="logo">Villa<span>Nova</span></h1>
+        <nav aria-label="Navigation principale">
+            <a href="index.html" aria-current="page">Accueil</a>
+            <a href="#evenements">Événements</a>
+        </nav>
+    </header>
+
+    <section class="banniere" aria-label="Bannière accueil">
+        <div class="banniere-contenu">
+            <h2>La culture à Marseille</h2>
+            <p>Concerts, expositions, spectacles et festivals</p>
+        </div>
+    </section>
+
+    <section class="filtres" aria-label="Recherche et filtres">
+        <label for="recherche" class="cache">Rechercher un événement</label>
+        <input type="search" id="recherche" placeholder="Rechercher un événement...">
+
+        <div class="boutons-filtres" role="group" aria-label="Filtrer par catégorie">
+            <button class="actif" data-categorie="tous" aria-pressed="true">Tous</button>
+            <button data-categorie="Concert" aria-pressed="false">Concerts</button>
+            <button data-categorie="Exposition" aria-pressed="false">Expositions</button>
+            <button data-categorie="Spectacle" aria-pressed="false">Spectacles</button>
+            <button data-categorie="Festival" aria-pressed="false">Festivals</button>
+        </div>
+    </section>
+
+    <main id="contenu">
+        <section class="evenements" id="evenements">
+            <h2>Événements à venir</h2>
+            <div aria-live="polite" class="cache" id="annonce"></div>
+            <div id="liste"><p>Chargement...</p></div>
+            <nav class="pagination" id="pagination" aria-label="Pagination des événements"></nav>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 VillaNova Marseille &mdash; Données : OpenAgenda</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+@import 'variables';
+
+@mixin bouton {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 0.4rem;
+    font-family: $police;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+@mixin tablette {
+    @media (min-width: 48rem) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 64rem) {
+        @content;
+    }
+}

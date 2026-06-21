@@ -1,0 +1,74 @@
+.banniere {
+    position: relative;
+    min-height: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: $blanc;
+    text-align: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('https://www.sncf-connect.com/fr-lu/article/5-restaurants-avec-vue-marseille-78481');
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 90, 130, 0.78) 0%,
+            rgba(0, 90, 130, 0.90) 100%
+        );
+        z-index: 1;
+    }
+
+    .banniere-contenu {
+        position: relative;
+        z-index: 2;
+        padding: 3rem 1.5rem;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 4rem;
+            height: 0.3rem;
+            background: $or-om;
+            margin: 0 auto 1.2rem;
+            border-radius: 0.2rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+
+            @include tablette {
+                font-size: 2.8rem;
+            }
+        }
+
+        p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 4rem;
+            height: 0.3rem;
+            background: $or-om;
+            margin: 1.2rem auto 0;
+            border-radius: 0.2rem;
+        }
+    }
+}
